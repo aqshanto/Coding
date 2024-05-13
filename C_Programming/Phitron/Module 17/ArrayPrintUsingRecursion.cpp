@@ -3,9 +3,11 @@
 using namespace std;
 
 void ArrPrint(int arr[], int n, int i){
-    for(int j=i;j>=0;j--){
-        cout<<arr[j]<<endl;
-    }
+    //base case
+    if(i==n)
+        return ;
+    cout<<arr[i]<<endl;
+    ArrPrint(arr,n,i+1);
 }
 
 int main(){
@@ -15,6 +17,6 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    ArrPrint(arr,n,n-1);
+    ArrPrint(arr,n,0);
     return 0;
 }
