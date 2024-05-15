@@ -17,10 +17,17 @@ int main(){
                 j++;
             }
         }
-        newarr[j]='\0';
+        if(j==0){
+            cout<<"0"<<endl;
+            continue;
+        }
         int k=0;
         while(newarr[k]=='0'){
             k++;
+        }
+        if(k==j){
+            cout<<"0"<<endl;
+            continue;
         }
         for(int i=k;i<j;i++){
             cout<<newarr[i];
