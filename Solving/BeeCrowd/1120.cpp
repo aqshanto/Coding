@@ -3,36 +3,27 @@
 using namespace std;
 
 int main(){
-    string fail,num;
+    char digit;
+    string num;
     while(1){
-        cin>>fail>>num;
-        if(fail.compare("0")==0 && num.compare("0")==0){
+        cin>>digit>>num;
+        if(digit=='0' && num=="0")
             break;
-        }
+        char newarr[110];
+        int j=0;
         for(int i=0;i<num.size();i++){
-            if(num[i]==fail[0]){
-                int j=i;
-                while(j<=num.size()){
-                    num[j]=num[j+1];
-                    j++;
-                }
-                i--;
+            if(num[i]!=digit){
+                newarr[j]=num[i];
+                j++;
             }
         }
-        int arr[num.size()];
-        for(int i=0;i<num.size()-1;i++){
-            arr[i]=num[i]-48;
+        newarr[j]='\0';
+        int k=0;
+        while(newarr[k]=='0'){
+            k++;
         }
-        for(int i=0;i<num.size()-1;i++){
-            if(arr[0]==0){
-                while(i<num.size()-2){
-                    if(arr[i]==0){
-                        i++;
-                        continue;
-                    }
-                }
-            }
-            cout<<arr[i];
+        for(int i=k;i<j;i++){
+            cout<<newarr[i];
         }
         cout<<endl;
     }
