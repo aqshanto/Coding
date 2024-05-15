@@ -7,13 +7,12 @@ int main(){
     while(!cin.eof()){
         getline(cin,str);
         for(int i=0;i<str.size();i++){
-            if((str[i]==' ' && str[i+1]==',') || (str[i]==' ' && str[i+1]=='.')){
+            if((str[i]==' ' && str[i+1]==' ' && str[i+2]<='z' && str[i+2]>='a') || (str[i]==' ' && str[i+1]==',') || (str[i]==' ' && str[i+1]=='.')){
                 int j=i;
                 while(j<str.size()){
                     str[j]=str[j+1];
                     j++;
                 }
-                i--;
             }
         }
         cout<<str<<endl;
