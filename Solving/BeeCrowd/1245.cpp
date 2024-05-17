@@ -1,63 +1,34 @@
-#include<stdio.h>
+#include<bits/stdc++.h>
+
+using namespace std;
 
 int main(){
-    int test;
-    while(scanf("%d",&test)!=EOF){
-        int size;
+    while(!cin.eof()){
+        int test,num,total=0;
         char ch;
-        int a=0,b=0;
-        int arr1[test],arr2[test];
-        for (int i = 0; i < test; i++) {
-            arr1[i] = 0;
-            arr2[i] = 0;
-        }
+        cin>>test;
+        int E[61]={0};
+        int D[61]={0};
         for(int i=0;i<test;i++){
-            scanf("%d %c",&size,&ch);
-            arr1[a]=0;
-            if(ch=='D'){
-                int count=0;
-                for(int j=0;j<=i;j++){
-                    if(arr1[j]==size){
-                        count=1;
-                        break;
-                    }
-                }
-                if(count==0){
-                    arr1[a]=size;
-                    a++;
-                }
-            }else if(ch=='E'){
-                int count=0;
-                for(int j=0;j<=i;j++){
-                    if(arr2[j]==size){
-                        count=1;
-                        break;
-                    }
-                }
-                if(count==0){
-                    arr2[b]=size;
-                    b++;
+            cin>>num>>ch;
+            if(ch=='E'){
+                E[num]++;
+            }else if(ch=='D'){
+                D[num]++;
+            }
+        }
+        for(int i=30;i<=60;i++){
+            if(E[i]>0 && D[i]>0){
+                if(E[i]==D[i]){
+                    total+=E[i];
+                }else if(E[i]<D[i]){
+                    total+=E[i];
+                }else if(E[i]>D[i]){
+                    total+=D[i];
                 }
             }
         }
-        // for(int i=0;i<a;i++){       //printing the array 1 where stored the Right boot sizes
-        //     printf("%d ",arr1[i]);
-        // }
-        // printf("\n");
-        // for(int i=0;i<b;i++){        //printing the array 1 where stored the left boot sizes
-        //     printf("%d ",arr2[i]);
-        // }printf("\n");
-
-        int bootpair=0;
-        for(int i=0;i<a;i++){
-            for(int j=0;j<b;j++){
-                if(arr1[i]==arr2[j]){
-                    bootpair++;
-                    break;
-                }
-            }
-        }
-        printf("%d\n",bootpair);
+        cout<<total<<endl;
     }
     return 0;
 }
