@@ -38,16 +38,22 @@ int main(){
     //     cout<<ch[i]<<endl;
     // }
 
-    //getline function
+    // //getline function
 
-    string str1,str2;
-    cin>>str1>>str2;
-    cout<<str1<<" "<<str2<<endl;
-    string str3;
-    cin.ignore();
-    getline(cin,str3);
-    cout<<str3<<endl;
+    // string str1,str2;
+    // cin>>str1>>str2;
+    // cout<<str1<<" "<<str2<<endl;
+    // string str3;
+    // cin.ignore();
+    // getline(cin,str3);
+    // cout<<str3<<endl;
 
-    
+    //string reverse
+    string str;
+    cin >>str;
+    for(int i=str.size()-1;i>=0;i--){
+        cout<<str[i];
+    }
+    cout<<endl;
     return 0;
 }
