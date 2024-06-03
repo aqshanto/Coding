@@ -9,13 +9,21 @@ int main(){
     for(int i=0;i<n;i++){
         int a;
         cin>>a;
-        vector<int>temp;
+        // vector<int>temp;
+        // for(int j=0;j<a;j++){
+        //     int num;
+        //     cin>>num;
+        //     temp.push_back(num);
+        // }
+
+        // we can do it without declaring any temp vector;
+
+        v.push_back(vector<int>());
         for(int j=0;j<a;j++){
             int num;
             cin>>num;
-            temp.push_back(num);
+            v[i].push_back(num);
         }
-        v.push_back(temp);
     }
     for(int i=0;i<v.size();i++){
         for(int j=0;j<v[i].size();j++){
