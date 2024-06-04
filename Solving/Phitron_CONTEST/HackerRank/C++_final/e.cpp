@@ -1,37 +1,41 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-class student
-{
+class student{
 public:
+
     string nm, s;
     int cls, id, math_marks, eng_marks;
+
 };
-bool cmp(student a, student b)
-{
-    if (a.eng_marks == b.eng_marks)
-    {
+
+bool cmp(student a, student b){
+    if (a.eng_marks == b.eng_marks){
         if (a.math_marks == b.math_marks)
             return (a.id < b.id);
+
         else
             return (a.math_marks > b.math_marks);
+
     }
+
     else
         return (a.eng_marks > b.eng_marks);
+
 }
-int main()
-{
-    int N;
-    cin >> N;
-    student st[N];
-    for (int i = 0; i < N; i++)
+
+int main(){
+
+    int n;
+    cin >> n;
+    student str[n];
+    for (int i = 0; i < n; i++)
     {
-        cin >> st[i].nm >> st[i].cls >> st[i].s >> st[i].id >> st[i].math_marks >> st[i].eng_marks;
+        cin >> str[i].nm >> str[i].cls >> str[i].s >> str[i].id >> str[i].math_marks >> str[i].eng_marks;
     }
-    sort(st, st + N, cmp);
-    for (int i = 0; i < N; i++)
+    sort(str, str + n, cmp);
+    for (int i = 0; i < n; i++)
     {
-        cout << st[i].nm << " " << st[i].cls << " " << st[i].s << " " << st[i].id << " " << st[i].math_marks << " " << st[i].eng_marks << endl;
+        cout << str[i].nm << " " << str[i].cls << " " << str[i].s << " " << str[i].id << " " << str[i].math_marks << " " << str[i].eng_marks << endl;
     }
     return 0;
 }

@@ -1,35 +1,36 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h>
 
-class student
-{
+using namespace std;
+class student{
 public:
     string nm, s;
     int cls, id, math_marks, eng_marks, sum;
 };
+
 bool cmp(student a, student b)
 {
-    if (a.sum == b.sum)
-    {
+    if (a.sum == b.sum){
         return (a.id < b.id);
     }
-    else
+    else{
         return (a.sum > b.sum);
-}
-int main()
-{
-    int N;
-    cin >> N;
-    student st[N];
-    for (int i = 0; i < N; i++)
-    {
-        cin >> st[i].nm >> st[i].cls >> st[i].s >> st[i].id >> st[i].math_marks >> st[i].eng_marks;
-        st[i].sum = st[i].math_marks + st[i].eng_marks;
     }
-    sort(st, st + N, cmp);
-    for (int i = 0; i < N; i++)
+}
+
+int main(){
+
+    int n;
+    cin >> n;
+    student str[n];
+    for (int i = 0; i < n; i++)
     {
-        cout << st[i].nm << " " << st[i].cls << " " << st[i].s << " " << st[i].id << " " << st[i].math_marks << " " << st[i].eng_marks << endl;
+        cin >> str[i].nm >> str[i].cls >> str[i].s >> str[i].id >> str[i].math_marks >> str[i].eng_marks;
+        str[i].sum = str[i].math_marks + str[i].eng_marks;
+    }
+    sort(str, str + n, cmp);
+    for (int i = 0; i < n; i++)
+    {
+        cout << str[i].nm << " " << str[i].cls << " " << str[i].s << " " << str[i].id << " " << str[i].math_marks << " " << str[i].eng_marks << endl;
     }
     return 0;
 }
