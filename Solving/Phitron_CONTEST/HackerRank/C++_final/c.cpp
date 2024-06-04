@@ -4,7 +4,7 @@ using namespace std;
 
 class student{
 public:
-    string nm, s;
+    string name, s;
     int cls, id;
 };
 
@@ -16,20 +16,20 @@ int main(){
     student str[N];
 
     for (int j=0;j<N;j++){
-        cin >> str[j].nm >> str[j].cls >> str[j].s >> str[j].id;
+        cin >> str[j].name >> str[j].cls >> str[j].s >> str[j].id;
     }
-    string ar[N];
+    string arr[N];
 
     for (int i=0;i<N;i++){
-        ar[i] = str[i].s;
+        arr[i] = str[i].s;
     }
 
     for (int k=0;k<N;k++){
-        str[k].s = ar[N-k-1];
+        str[k].s = arr[N-k-1];
     }
 
     for (int h=0;h<N;h++){
-        cout << str[h].nm << " " << str[h].cls << " " << str[h].s << " " << str[h].id << endl;
+        cout << str[h].name << " " << str[h].cls << " " << str[h].s << " " << str[h].id << endl;
     }
 
     return 0;
