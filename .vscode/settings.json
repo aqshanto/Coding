@@ -8,6 +8,7 @@
         "valarray": "cpp",
         "random": "cpp",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iosfwd": "cpp"
     }
 }
