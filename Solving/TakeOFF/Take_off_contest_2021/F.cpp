@@ -6,24 +6,20 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        long long int l,r,d,num,i;
+        long long int l,r,d,num,i,dif;
         cin>>l>>r>>d;
-        
-        if(l<=d && r>=d){
-            for(i=l;;i++){
-                if(i%10==d){
-                    num=i;
-                    break;
-                }
+        for(i=l;;i++){
+            if(i%10==d){
+                num=i;
+                break;
             }
-            if(num>r){
-                cout<<"0"<<endl;
-            }else{
-                long long int dif=r-num;
-                cout<<dif/10+1<<endl;
-            }
-        }else{
+        }
+        if(num>r){
             cout<<"0"<<endl;
+        }
+        else{
+            dif=r-num;
+            cout<<dif/10+1<<endl;
         }
     }
     return 0;
