@@ -8,18 +8,43 @@ int main(){
     while(t--){
         int N,A,B;
         cin>>N>>A>>B;
-        int Arr[N],A1[N],B1[N];
+        vector<pair<int ,int>>v1,v2;
         for(int i=0;i<N;i++){
-            cin>>Arr[i];
-            A1[i]=Arr[i]*A;
-            B1[i]=Arr[i]*B;
+            int num;
+            cin>>num;
+            v1.push_back({num*A,i});
+            v2.push_back({num*B,i});
         }
-        sort(A1,A1+N);
-        sort(B1,B1+N,greater<int>());
-        if(A1[N-1]>B1[0]){
-            cout<<A1[N-1]-B1[N-1]<<endl;
-        }else if(A1[N-1]<B1[0]){
-            cout<<B1[0]-A1[0]<<endl;
+        sort(v1.begin(),v1.end());
+        sort(v2.begin(),v2.end());
+
+        int s=0,e=N-1;
+        if(v1[e].first>v2[e].first){
+            while(1){
+                if(v1[e].second!=v2[s].second){
+                    cout<<v1[e].first-v2[s].first<<endl;
+                    break;
+                }else{
+                    if(v1[e].first-v1[e-1].first <v2[s+1].first-v2[s].first){
+                        s++;
+                    }else{
+                        e--;
+                    }
+                }
+            }
+        }else if(v1[e].first<v2[e].first){
+            while(1){
+                if(v2[e].second!=v1[s].second){
+                    cout<<v2[e].first-v1[s].first<<endl;
+                    break;
+                }else{
+                    if(v2[e].first-v2[e-1].first <v1[s+1].first-v1[s].first){
+                        s++;
+                    }else{
+                        e--;
+                    }
+                }
+            }
         }
     }
 }

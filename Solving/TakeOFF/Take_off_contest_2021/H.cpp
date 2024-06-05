@@ -5,8 +5,6 @@ using namespace std;
 int Prime(int n){
     if(n==1 || n==0){
         return 0;
-    }else if(n==2){
-        return 1;
     }else{
         for(int i=2;i<=sqrt(n);i++){
             if(n%i==0){
@@ -23,20 +21,20 @@ int main(){
     while(t--){
         int i,n,c;
         cin>>n;
-        for(i=1;i<=n/2;i++){
-            c=0;
-            if(Prime(i)==1){
-                if(Prime(n-i)==1){
-                    c=1;
-                    break;
+        if(n<3){
+            cout<<"NO"<<endl;
+        }else{
+            if(n%2==0){
+                cout<<"YES"<<endl;
+            }if(n%2!=0){
+                if(Prime(n-2)){
+                    cout<<"YES"<<endl;
+                }else{
+                    cout<<"NO"<<endl;
                 }
             }
         }
-        if(c==1){
-            cout<<i<<" "<<n-i<<" YES"<<endl;
-        }else{
-            cout<<"NO"<<endl;
-        }
+
     }
     return 0;
 }
