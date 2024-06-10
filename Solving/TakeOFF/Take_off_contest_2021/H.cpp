@@ -2,20 +2,18 @@
 
 using namespace std;
 
-int Prime(int n){
-    if(n==1 || n==0){
-        return 0;
-    }else{
-        for(int i=2;i<=sqrt(n);i++){
-            if(n%i==0){
-                return 0;
-            }
-        }
-        return 1;
-    }
-}
+int N=1e8+10;
+vector<bool> Prime(N,1);
 
 int main(){
+    Prime[0]=Prime[1]=false;
+    for(int i=0;i<N;i++){
+        if(Prime[i]== true){
+            for(int j=2*i;j<N;j+=i){
+                Prime[j]=false;
+            }
+        }
+    }
     int t;
     cin>>t;
     while(t--){
@@ -27,7 +25,7 @@ int main(){
             if(n%2==0){
                 cout<<"YES"<<endl;
             }if(n%2!=0){
-                if(Prime(n-2)){
+                if(Prime[n-2]){
                     cout<<"YES"<<endl;
                 }else{
                     cout<<"NO"<<endl;
