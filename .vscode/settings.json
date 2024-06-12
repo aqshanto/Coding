@@ -11,5 +11,6 @@
         "iostream": "cpp",
         "iosfwd": "cpp",
         "cmath": "cpp"
-    }
+    },
+    "terminal.integrated.shellIntegration.enabled": false
 }
