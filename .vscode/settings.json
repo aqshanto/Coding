@@ -10,7 +10,8 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "iosfwd": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "iomanip": "cpp"
     },
     "terminal.integrated.shellIntegration.enabled": false
 }
