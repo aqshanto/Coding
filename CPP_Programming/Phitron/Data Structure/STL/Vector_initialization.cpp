@@ -29,5 +29,10 @@ int main(){
     // }cout<<endl;
     // cout<< v.size()<<endl;
 
+    vector <int> v={2,10,3};
+    for(int i=0;i<v.size();i++){
+        cout<<v[i]<<' ';
+    }cout<<endl;
+    cout<< v.size()<<endl;
     return 0;
 }
