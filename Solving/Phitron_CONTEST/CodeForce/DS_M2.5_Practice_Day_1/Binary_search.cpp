@@ -30,36 +30,37 @@
 //Method 2: using binary search
 
 #include<bits/stdc++.h>
-
+ 
 using namespace std;
-
+ 
 int main(){
     int n,q;
     cin>>n>>q;
-    vector<int>v(n);
+    int a[n];
     for(int i=0;i<n;i++){
-        cin>>v[i];
+        cin>>a[i];
     }
-    sort(v.begin(),v.end());
+    sort(a,a+n);
     for(int i=0;i<q;i++){
-        int a;
-        cin>>a;
-        
-        int s=0,e=n,flag=0;
-        while(s<e){
+        int num;
+        cin>>num;
+        int s=0,e=n;
+        bool flag =false;
+        while(s<=e){
             int mid=(s+e)/2;
-            if(v[mid]==a){
-                cout<<"found"<<endl;
-                flag=1;
+            if(a[mid]==num){
+                flag=true;
                 break;
-            }else if(v[mid]>a){
+            }else if(a[mid]>num){
                 e=mid-1;
-            }else if(v[mid]<a){
+            }else if(a[mid]<num){
                 s=mid+1;
             }
         }
-        if(flag==0){
+        if(flag==false){
             cout<<"not found"<<endl;
+        }else if(flag==true){
+            cout<<"found"<<endl;
         }
     }
     return 0;

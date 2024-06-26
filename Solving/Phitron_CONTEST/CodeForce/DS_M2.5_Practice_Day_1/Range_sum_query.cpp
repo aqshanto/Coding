@@ -33,9 +33,9 @@
 using namespace std;
 
 int main(){
-    int n,q;
+    long long int n,q;
     cin>>n>>q;
-    vector <int> v(n+1,0),v1(n+1,0);
+    vector <long long int> v(n+1,0),v1(n+1,0);
     for(int i=1;i<=n;i++){
         cin>>v[i];
         v1[i]=v1[i-1]+v[i];
