@@ -11,7 +11,8 @@
         "iostream": "cpp",
         "iosfwd": "cpp",
         "cmath": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "*.tcc": "cpp"
     },
     "terminal.integrated.shellIntegration.enabled": false
 }
