@@ -19,10 +19,15 @@ int main(){
 
         int next_total=(m1+m2+m3+m4+m5+m6);
         
+        
         if(first_total>budget){
             cout<<"Case "<<i<<": "<<next_total+(first_total-budget)<<endl;
         }else if(first_total<=budget){
+            if((next_total-(budget-first_total))<0){
+            cout<<"Case "<<i<<": "<<0<<endl;
+            }else{
             cout<<"Case "<<i<<": "<<next_total-(budget-first_total)<<endl;
+            }
         }
     }
     return 0;
